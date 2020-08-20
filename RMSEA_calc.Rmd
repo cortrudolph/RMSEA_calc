@@ -1,0 +1,32 @@
+---
+title: "RMSEA Calculator"
+author: "Cort W. Rudolph, Ph.D."
+date: "8/19/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Formula:
+
+$$\Large RMSEA = \frac{\sqrt{(\chi^2-df)}}{\sqrt{(df(n-1)}}$$
+
+Function
+```{r}
+RMSEA_Calc<-function(df, chi2, n){
+  print(
+  sqrt(chi2-df)/
+  sqrt(df*(n-1))
+  )
+}
+```
+
+
+```{r}
+# Example
+RMSEA_Calc(df=10, chi2=12.5, n=500)
+
+```
+
